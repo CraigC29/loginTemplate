@@ -60,7 +60,7 @@ app.get('/mediaSeries', function(req, res) {
 
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
-  if(!req.session.loggedin){res.redirect('pages/login');return;}
+  if(!req.session.loggedin){res.render('pages/login');return;}
   res.render('pages/profile');
 });
 
