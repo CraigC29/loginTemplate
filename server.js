@@ -61,6 +61,19 @@ app.get('/mediaSeries', function(req, res) {
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
   if(!req.session.loggedin){res.render('pages/login');return;}
+  
+  var uname = req.query.username;
+  //this query finds the first document in the array with that username.
+  //Because the username value sits in the login section of the user data we use login.username
+  db.collection('people').findOne({
+    "login.username": uname
+  }, function(err, result) {
+    if (err) throw err;
+    //console.log(uname+ ":" + result);
+    //finally we just send the result to the user page as "user"
+    res.render('pages/profile', {
+      user: result
+    })
   res.render('pages/profile');
 });
 
