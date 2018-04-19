@@ -63,11 +63,6 @@ app.get('/login', function(req, res) {
   res.render('pages/login');
 });
 
-//this is our login route, all it does is render the login.ejs page.
-app.get('/profile', function(req, res) {
-  res.render('pages/profile');
-});
-
 //this is our profile route, it takes in a username and uses that to search the database for a specific user
 app.get('/profile', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
@@ -111,7 +106,7 @@ app.get('/logout', function(req, res) {
 //********** POST ROUTES - Deal with processing data from forms ***************************
 
 
-//the dologin route detasl with the data from the login screen.
+//the dologin route detals with the data from the login screen.
 //the post variables, username and password ceom from the form on the login page.
 app.post('/dologin', function(req, res) {
   console.log(JSON.stringify(req.body))
@@ -123,7 +118,7 @@ app.post('/dologin', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
+    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/profile') }
     //otherwise send them back to login
     else{res.redirect('/login')}
   });
