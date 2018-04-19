@@ -30,8 +30,6 @@ $(function(){
 
 $(document).ready(function () {
 
-  hasLoggedIn();
-
   $(document).on('click', ".genreSelectButton", function() {
        var genre = $(this).attr('id');
        if (genre != "clear"){
@@ -532,11 +530,6 @@ $(document).on('click', ".seriesBlock", function() {
   loadEpisodeData(seriesSelected);
 });
 
-function hasLoggedIn(){
-  if (loggedIn != null){
-    console.log("loggedIn");
-  }
-}
 
 
 //function selectNameBlock
@@ -576,6 +569,9 @@ function scrollFunction() {
 function topFunction() {
     $("html, body").animate({ scrollTop: 0 }, "slow");
 }
+
+
+
 
 function showDropdown() {
     document.getElementById("myDropdown").classList.toggle("show");

@@ -56,7 +56,11 @@
 
 
 <button class="loginBut" type="button" name="login">
+  {% if loggedIn %}
     <img src="/public/images/loginButtonImage.png" alt="LOGIN" class="loginBut" onCLick="login()"><a>Login</a>
+  {% else %}
+    <img src="/public/images/myAccount.png" alt="LOGIN" class="loginBut" onCLick="login()"><a>My Account</a>
+  {% endif %}
 </button>
 
   <!--Creating logo image, with class logoimage. Calling image from file -->
