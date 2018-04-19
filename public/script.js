@@ -232,6 +232,7 @@ function changeToSeries(){
   goHomeSeries();
 }
 
+
 function loadMovies(){
   var movieID = getUrlVars()["id"];
   loadAllMovieMedia(movieID);
@@ -444,6 +445,12 @@ function goHomeSeries(){
 }
 function goHomeMovies(){
   var urlHome = "/?id=Movies";
+  isDelving == false;
+  window.location.replace(urlHome);
+}
+
+function login(){
+  var urlHome = "/login";
   isDelving == false;
   window.location.replace(urlHome);
 }
