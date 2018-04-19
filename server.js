@@ -49,6 +49,16 @@ app.get('/', function(req, res) {
 });
 
 //this is our login route, all it does is render the login.ejs page.
+app.get('/mediaMovies', function(req, res) {
+  res.render('pages/mediaMovies');
+});
+
+//this is our login route, all it does is render the login.ejs page.
+app.get('/mediaSeries', function(req, res) {
+  res.render('pages/mediaSeries');
+});
+
+//this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
   res.render('pages/login');
 });
