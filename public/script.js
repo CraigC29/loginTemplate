@@ -30,6 +30,8 @@ $(function(){
 
 $(document).ready(function () {
 
+  hasLoggedIn();
+  
   $(document).on('click', ".genreSelectButton", function() {
        var genre = $(this).attr('id');
        if (genre != "clear"){
@@ -529,6 +531,10 @@ $(document).on('click', ".seriesBlock", function() {
   seriesSelected = series;
   loadEpisodeData(seriesSelected);
 });
+
+function hasLoggedIn(){
+  if(!req.session.loggedin){console.log("loggedIn");}
+}
 
 
 //function selectNameBlock
