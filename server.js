@@ -1,10 +1,10 @@
 /**
- * @Author: John Isaacs <john>
- * @Date:   18-Mar-182018
- * @Filename: server.js
- * @Last modified by:   john
- * @Last modified time: 27-Mar-182018
- */
+* @Author: John Isaacs <john>
+* @Date:   18-Mar-182018
+* @Filename: server.js
+* @Last modified by:   john
+* @Last modified time: 27-Mar-182018
+*/
 
 
 
@@ -61,7 +61,7 @@ app.get('/mediaSeries', function(req, res) {
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
   if(!req.session.loggedin){res.render('pages/login');return;}
-  
+
   var uname = req.query.username;
   //this query finds the first document in the array with that username.
   //Because the username value sits in the login section of the user data we use login.username
@@ -74,7 +74,8 @@ app.get('/login', function(req, res) {
     res.render('pages/profile', {
       user: result
     })
-  res.render('pages/profile');
+  });
+  
 });
 
 //this is our profile route, it takes in a username and uses that to search the database for a specific user
@@ -133,7 +134,7 @@ app.post('/dologin', function(req, res) {
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
     if(result.login.password == pword){
-        req.session.loggedin = true; res.render('/')
+      req.session.loggedin = true; res.render('/')
     }
     //otherwise send them back to login
     else{res.redirect('/login')}
@@ -175,22 +176,22 @@ app.post('/adduser', function(req, res) {
 
   //we create the data string from the form components that have been passed in
 
-var datatostore = {
-"gender":req.body.gender,
-"name":{"title":req.body.title,"first":req.body.first,"last":req.body.last},
-"location":{"street":req.body.street,"city":req.body.city,"state":req.body.state,"postcode":req.body.postcode},
-"email":req.body.email,
-"login":{"username":req.body.username,"password":req.body.password},
-"dob":req.body.dob,"registered":Date(),
-"picture":{"large":req.body.large,"medium":req.body.medium,"thumbnail":req.body.thumbnail},
-"nat":req.body.nat}
+  var datatostore = {
+    "gender":req.body.gender,
+    "name":{"title":req.body.title,"first":req.body.first,"last":req.body.last},
+    "location":{"street":req.body.street,"city":req.body.city,"state":req.body.state,"postcode":req.body.postcode},
+    "email":req.body.email,
+    "login":{"username":req.body.username,"password":req.body.password},
+    "dob":req.body.dob,"registered":Date(),
+    "picture":{"large":req.body.large,"medium":req.body.medium,"thumbnail":req.body.thumbnail},
+    "nat":req.body.nat}
 
 
-//once created we just run the data string against the database and all our new data will be saved/
-  db.collection('people').save(datatostore, function(err, result) {
-    if (err) throw err;
-    console.log('saved to database')
-    //when complete redirect to the index
-    res.redirect('/')
-  })
-});
+    //once created we just run the data string against the database and all our new data will be saved/
+    db.collection('people').save(datatostore, function(err, result) {
+      if (err) throw err;
+      console.log('saved to database')
+      //when complete redirect to the index
+      res.redirect('/')
+    })
+  });
