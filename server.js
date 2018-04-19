@@ -45,7 +45,6 @@ MongoClient.connect(url, function(err, database) {
 //this is our root route
 app.get('/', function(req, res) {
   //otherwise perfrom a search to return all the documents in the people collection
-  if(!req.session.loggedin){res.render('pages/flicktionary', {loggedIn: "notLoggedIn"})}
   res.render('pages/flicktionary')
 });
 
@@ -61,7 +60,8 @@ app.get('/mediaSeries', function(req, res) {
 
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
-  res.render('pages/login');
+  if(!req.session.loggedin){res.redirect('pages/login');return;}
+  res.render('pages/profile');
 });
 
 //this is our profile route, it takes in a username and uses that to search the database for a specific user
