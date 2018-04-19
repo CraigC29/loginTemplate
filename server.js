@@ -48,12 +48,12 @@ app.get('/', function(req, res) {
   res.render('pages/flicktionary')
 });
 
-//this is our login route, all it does is render the login.ejs page.
+//this is our mediaMovies route, all it does is render the mediaMovies.ejs page.
 app.get('/mediaMovies', function(req, res) {
   res.render('pages/mediaMovies');
 });
 
-//this is our login route, all it does is render the login.ejs page.
+//this is our mediaSeries route, all it does is render the mediaSeries.ejs page.
 app.get('/mediaSeries', function(req, res) {
   res.render('pages/mediaSeries');
 });
@@ -61,6 +61,11 @@ app.get('/mediaSeries', function(req, res) {
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
   res.render('pages/login');
+});
+
+//this is our login route, all it does is render the login.ejs page.
+app.get('/profile', function(req, res) {
+  res.render('pages/profile');
 });
 
 //this is our profile route, it takes in a username and uses that to search the database for a specific user
