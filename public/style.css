@@ -66,8 +66,8 @@ font is set, font size is selected and the weight is also set*/
 }
 
 .loginBack{
-  width: 40px;
-  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 
