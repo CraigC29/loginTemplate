@@ -438,12 +438,12 @@ function openInNewTab(url) {
 }
 
 function goHomeSeries(){
-  var urlHome = "flicktionary.html?id=Series";
+  var urlHome = "/flicktionary?id=Series";
   isDelving == false;
   window.location.replace(urlHome);
 }
 function goHomeMovies(){
-  var urlHome = "flicktionary.html?id=Movies";
+  var urlHome = "/flicktionary?id=Movies";
   isDelving == false;
   window.location.replace(urlHome);
 }
