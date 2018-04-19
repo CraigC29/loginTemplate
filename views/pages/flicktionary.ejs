@@ -56,10 +56,10 @@
 
 
 <button class="loginBut" type="button" name="login" id="headButton">
-  <% if (loggedIn){ %>
-    <img src="/public/images/loginButtonImage.png" alt="LOGIN" class="loginBut" onCLick="login()"><a>Login</a>
+  <% if (loggedIn == "notLoggedIn"){ %>
+    <img src="/public/images/loginButtonImage.png" alt="LOGIN" class="loginBut" onClick="login()"><a>Login</a>
   <% } else{ %>
-    <img src="/public/images/myAccount.png" alt="LOGIN" class="loginBut" onCLick="login()"><a>My Account</a>
+    <img src="/public/images/myAccount.png" alt="LOGIN" class="loginBut" onClick="login()"><a>My Account</a>
   <% } %>
 </button>
 

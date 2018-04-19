@@ -45,6 +45,7 @@ MongoClient.connect(url, function(err, database) {
 //this is our root route
 app.get('/', function(req, res) {
   //otherwise perfrom a search to return all the documents in the people collection
+  if(!req.session.loggedin){res.render('pages/flicktionary', {loggedIn: "notLoggedIn"})}
   res.render('pages/flicktionary')
 });
 
