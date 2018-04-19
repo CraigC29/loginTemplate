@@ -18,6 +18,9 @@ const app = express();
 //this tells express we are using sesssions. These are variables that only belong to one user of the site at a time.
 app.use(session({ secret: 'example' }));
 
+//CSS
+app.use(express.static(__dirname + '/public'));
+
 app.use(bodyParser.urlencoded({
   extended: true
 }))
