@@ -31,7 +31,7 @@ $(function(){
 $(document).ready(function () {
 
   hasLoggedIn();
-  
+
   $(document).on('click', ".genreSelectButton", function() {
        var genre = $(this).attr('id');
        if (genre != "clear"){
@@ -533,7 +533,9 @@ $(document).on('click', ".seriesBlock", function() {
 });
 
 function hasLoggedIn(){
-  if(!req.session.loggedin){console.log("loggedIn");}
+  if (loggedIn != null){
+    console.log("loggedIn");
+  }
 }
 
 
