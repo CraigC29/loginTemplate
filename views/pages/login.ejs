@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
 
-<header>
-  <% include ../partials/head %>
-</header>
+<body class="bodyFlick">
 
+  <header>
+    <% include ../partials/head %>
+  </header>
 
-<body class="container">
-    <header>
-      <% include ../partials/header %>
-    </header>
+  <head>
+    <img class="backBut" onclick="goHomeMovies()" src="/public/images/backbutton.png" alt="Back Button"/>
+  </head>
 
   <main>
+
+    <!-- div tags with the logo image, image is called from a file -->
+    <div class="loginLogo">
+      <img src="/public/images/logo.png" class="SiteLogo">
+    </div>
     <div class="jumbotron">
 
-      <h2>Login</h2>
+      <h2 class="loginHead">Login</h2>
       <!-- simple login form, submits to our /dologin route -->
       <form action="/dologin" method="POST">
-        <input type="text" placeholder="username" name="username">
-        <input type="password" placeholder="password" name="password">
-        <button type="submit">Submit</button>
+        <input type="text" placeholder="username" name="username" class="loginText">
+        <br>
+        <input type="password" placeholder="password" name="password" class="loginText">
+        <br>
+        <button type="submit" class="submitButton">Submit</button>
       </form>
-
 
     </div>
   </main>
+
 
 
   <footer>

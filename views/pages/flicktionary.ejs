@@ -72,7 +72,7 @@
   </div>
   <input type="text" class="searchbar" id="searchInput" name="Search Media" placeholder="Search Movies"> </input>
   <br>
-  <button id="submit">Search</button>
+  <button id="submit" class="submitButton">Search</button>
 
   <!-- P tag to give the user an idea of what to search for.
   This is so that there is no uncertainty over what the site does -->
@@ -80,7 +80,7 @@
 
 </main> <!--Closing main tag -->
 
-<button onclick="topFunction()" id="myBtn" title="Go to top">&#9650;</button>
+<button onclick="topFunction()" id="myBtn"  title="Go to top">&#9650;</button>
 
 <div class="allMovies" id="allMovies">
 
@@ -112,7 +112,9 @@
 
 </div>
 
-<p class="page-footer">Created by Ben Martin, Craig Cargill, Gregor Davidson, Calum McGuire for CM2104 coursework</p>
+<footer>
+  <% include ../partials/footer %>
+</footer>
 
 </body><!--Closing body tag -->
 </html><!--Closing html tag -->

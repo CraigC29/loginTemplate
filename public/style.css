@@ -57,6 +57,14 @@ font is set, font size is selected and the weight is also set*/
     margin: 0px;
 }
 
+.loginLogo{
+  padding-top: 5%;
+  width: 30%;
+  min-width: 400px;
+  margin-left: 35%;
+  margin-right:35%;
+}
+
 
 /*the footer is set to black, the text colour is white, the position of the
 footer is fixed, the width is set at 100% and the font size is medium*/
@@ -282,7 +290,7 @@ a {
   text-align: center;
 }
 
-#submit{
+.submitButton{
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100px;
@@ -301,13 +309,22 @@ a {
   transition-duration: 0.4s;
 }
 
-#submit:hover{
+.submitButton:hover{
   background-color: #bc4f23;
   color: #211d23;
 }
 
+.loginText{
+  width: 10%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 #myBtn {
-  display: none;
   position: fixed;
   bottom: 40px;
   right: 30px;
