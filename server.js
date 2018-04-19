@@ -173,8 +173,9 @@ app.post('/delete', function(req, res) {
 app.post('/adduser', function(req, res) {
   //check we are logged in
   if(!req.session.loggedin){
-    res.redirect('/login');
     console.log("not logged in");
+    res.redirect('/login');
+
     return;
   }
 
