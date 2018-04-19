@@ -10,18 +10,18 @@
 <body class="container">
 
   <header>
-    <% include ../partials/header %>
+
   </header>
 
   <main>
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="jumbotron">
+    <div >
+      <div>
+        <div>
           <!-- Page to display a single profile. The "user" object is passed through from express -->
           <!-- get the first name -->
           <h1>Hi <%= user.name.first %></h1>
           <!-- get the medium picture -->
-          <img src="<%= user.picture.medium %>" class="img-circle" />
+          <img src="<%= user.picture.medium %>" />
           <!-- get the username -->
           <h2>username: <%= user.login.username %></h2>
           <p>
@@ -39,22 +39,22 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="well">
+      <div>
+        <div>
           <h3>Details</h3>
           <h3>Address</h3>
           <ul>
             <!-- get the componemts of the address-->
-            <li class="list-group-item">
+            <li>
               <%= user.location.street %>
             </li>
-            <li class="list-group-item">
+            <li>
               <%= user.location.city%>
             </li>
-            <li class="list-group-item">
+            <li>
               <%= user.location.state %>
             </li>
-            <li class="list-group-item">
+            <li>
               <%= user.location.postcode %>
             </li>
           </ul>
