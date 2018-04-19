@@ -70,6 +70,11 @@ font is set, font size is selected and the weight is also set*/
   max-height: 40px;
 }
 
+h4{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 
 /*the footer is set to black, the text colour is white, the position of the
 footer is fixed, the width is set at 100% and the font size is medium*/
