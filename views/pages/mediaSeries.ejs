@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head><!--Opening head tag -->
+  <!--Linking CSS File -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+  <script src="script.js"></script>
+  <title>Flicktionary</title>
+</head>
+
+
+<header>
+  <div class="headerBar">
+    <div class="itemContainer">
+      <img class="logoHeaderImage"  src="logo.png" alt="Logo"/>
+    </div>
+
+
+    <img class="backBut" onclick="goHomeSeries()" src="backButton.png" alt="Back Button"/>
+  </div>
+</header>
+
+<body onload="loadSeries()" class="seriesBody">
+
+<div class="blurredImageContainer">
+  <div class="seriesContainer">
+    <div class="mediaContainer" id="seriesMediaHeight">
+      <div id="mainSeriesImage">Image</div>
+      <div class="mediaInfo">
+        <div id="mainTitle">Title</div>
+        <div id="seriesInfo">Series</div>
+        <div id="mainDesc">Description</div>
+      </div>
+    </div>
+  </div>
+  <img src="logo.png" id="blurredImage">
+</div>
+
+<div id="seriesInfoHolder">
+  <div id="seriesBlockContainer"><div class="seriesHeads">Season</div><div id="blockSeries"></div></div>
+  <div id="seriesEpisodeContainer"><div class='seriesHeads' id="episodeNums"></div><div id="blockEp"></div></div>
+  <div id="seriesEpisodeInfoContainer"><div id="blockInfo"></div></div>
+</div>
+
+</body>
+
+</html><!--Closing html tag -->

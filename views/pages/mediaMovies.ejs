@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head><!--Opening head tag -->
+  <!--Linking CSS File -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+  <script src="script.js"></script>
+  <title>Flicktionary</title>
+</head>
+
+<header>
+<div class="headerBar">
+    <!--Opening a button tag, with class loginBut of type button -->
+    <div class="itemContainer">
+      <img class="logoHeaderImage"  src="logo.png" alt="Logo"/>
+    </div>
+
+
+    
+      <img class="backBut" onclick="goHomeMovies()" src="backButton.png" alt="Back Button"/>
+
+  </div>
+</header>
+
+<body onload="loadMovies()" class="bodyFlick">
+<div class="blurredImageContainerMovie" id="movieMediaContainer">
+  <div class="mediaContainer seriesContainer movieLocation">
+    <div id="mainImage">Image</div>
+    <div class="mediaInfoMovie">
+      <div id="mainTitle">Title</div>
+      <div id="littleMovieInfo">Little Info</div>
+      <div id="mainDesc">Description</div>
+    </div>
+  </div>
+
+  <img src="logo.png" id="blurredImageMovie">
+</div>
+
+
+</body>
+
+</html><!--Closing html tag -->

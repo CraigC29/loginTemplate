@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<!--test-->
+<head><!--Opening head tag -->
+  <!--Linking CSS File -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+  <script src="script.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="928297954491-9qsvtibvgjeh3ikuqriht7fiuen57l1t.apps.googleusercontent.com">
+
+  <title>Flicktionary</title>
+
+
+  <!--For the login button-->
+
+
+
+</head><!--Closing head tag -->
+
+<!-- body tag with class bodyFilck  -->
+<body class="bodyFlick" onload="loadHomepage();">
+
+
+
+<div class="headerBar">
+  <!--Opening a button tag, with class loginBut of type button -->
+  <div class="itemContainer" id="movieContainer">
+    <div class="movieButton" onclick="changeToMovie()" id="movieButton">Movies</div>
+  </div>
+  <!--Opening a button tag, with class loginBut of type button -->
+  <div class="itemContainer" id="seriesContainer">
+    <div class="seriesButton" onclick="changeToSeries()" id="seriesButton">Series</div>
+  </div>
+  <div class="dropdown" id="seriesContainer">
+    <button onclick="showDropdown()" class="genreButton" id="genreButtonMain">Genre</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a id="28" class="genreSelectButton">Action</a>
+      <a id="12" class="genreSelectButton">Adventure</a>
+      <a id="16" class="genreSelectButton">Animation</a>
+      <a id="80" class="genreSelectButton">Crime</a>
+      <a id="99" class="genreSelectButton">Documentary</a>
+      <a id="18" class="genreSelectButton">Drama</a>
+      <a id="14" class="genreSelectButton">Fantasy</a>
+      <a id="36" class="genreSelectButton">History</a>
+      <a id="27" class="genreSelectButton">Horror</a>
+      <a id="878" class="genreSelectButton">Science Fiction</a>
+      <a id="53" class="genreSelectButton">Thriller</a>
+      <a id="10752" class="genreSelectButton">War</a>
+      <a id="37" class="genreSelectButton">Western</a>
+      <a id="clear" class="genreSelectButton">Clear</a>
+    </div>
+  </div>
+  <!--Opening a button tag, with class loginBut of type button -->
+
+  <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
+  LOGOUT
+  <a href="#" onclick="signOut();">Sign out</a>
+  <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+  </script> -->
+
+
+<button class="loginBut" type="button" name="login">
+    <img src="loginButtonImage.png" alt="LOGIN" class="loginBut"><a>Login</a>
+</button>
+
+  <!--Creating logo image, with class logoimage. Calling image from file -->
+
+</div>
+
+<!--main class-->
+<main class="mainBody" id="mainBody">
+
+  <!-- div tags with the logo image, image is called from a file -->
+  <div>
+    <img src="logo.png" class="SiteLogo">
+  </div>
+  <input type="text" class="searchbar" id="searchInput" name="Search Media" placeholder="Search Movies"> </input>
+  <br>
+  <button id="submit">Search</button>
+
+  <!-- P tag to give the user an idea of what to search for.
+  This is so that there is no uncertainty over what the site does -->
+  <p>Streamed Media Search Engine</p>
+
+</main> <!--Closing main tag -->
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#9650;</button>
+
+<div class="allMovies" id="allMovies">
+
+
+  <div class="item1" id="movieBar">
+    <div class="large-item">
+
+      <div id="message"></div>
+      <ul id="pagination"></ul>
+
+      <div id="resultsbox"  >
+
+        <div id="results">
+          <!-- content will be loaded here (promise) -->
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="item2" id="sideBar">
+
+    <div class="large-item-2" id="moreDetails">
+      <p>Movie:</p>
+    </div>
+
+  </div>
+
+</div>
+
+<p class="page-footer">Created by Ben Martin, Craig Cargill, Gregor Davidson, Calum McGuire for CM2104 coursework</p>
+
+</body><!--Closing body tag -->
+</html><!--Closing html tag -->
