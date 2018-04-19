@@ -19,7 +19,7 @@ const app = express();
 app.use(session({ secret: 'example' }));
 
 //CSS
-app.use(express.static(__dirname + '/public'));
+app.use("/public",express.static(__dirname + "/public"));
 
 app.use(bodyParser.urlencoded({
   extended: true
