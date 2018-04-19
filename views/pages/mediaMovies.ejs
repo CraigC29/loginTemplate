@@ -6,7 +6,13 @@
 </header>
 
 <header>
-  <% include ../partials/header %>
+  <div class="headerBar">
+    <div class="itemContainer">
+      <img class="logoHeaderImage"  src="/public/images/logo.png" alt="Logo"/>
+    </div>
+
+    <img class="backBut" onclick="goHomeMovies()" src="/public/images/backbutton.png" alt="Back Button"/>
+  </div>
 </header>
 
 <body onload="loadMovies()" class="bodyFlick">
