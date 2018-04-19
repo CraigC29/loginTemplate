@@ -56,8 +56,11 @@
 
 
 <button class="loginBut" type="button" name="login" id="headButton">
+  <% if (loggedIn){ %>
     <img src="/public/images/loginButtonImage.png" alt="LOGIN" class="loginBut" onCLick="login()"><a>Login</a>
-    <!-- <img src="/public/images/myAccount.png" alt="LOGIN" class="loginBut" onCLick="login()"><a>My Account</a> -->
+  <% } else{ %>
+    <img src="/public/images/myAccount.png" alt="LOGIN" class="loginBut" onCLick="login()"><a>My Account</a>
+  <% } %>
 </button>
 
   <!--Creating logo image, with class logoimage. Calling image from file -->

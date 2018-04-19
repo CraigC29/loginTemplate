@@ -119,8 +119,7 @@ app.post('/dologin', function(req, res) {
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
     if(result.login.password == pword){
-      document.getElementById("headButton").innerHTML = '<img src="/public/images/myAccount.png" alt="LOGIN" class="loginBut" onCLick="login()"><a>My Account</a>"';
-      req.session.loggedin = true; res.redirect('/', {loggedIn: true})
+        req.session.loggedin = true; res.render('/', {loggedIn: "loggedIn"})
     }
     //otherwise send them back to login
     else{res.redirect('/login')}
