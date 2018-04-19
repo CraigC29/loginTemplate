@@ -198,10 +198,10 @@ a {
   border: 5px solid blue;
   border-radius: 5px;
   margin: 5px;
-  -webkit-transition: opacity 0.2s ease-in-out;
+  /* -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out;
-    transition: 0.2s linear;
+    transition: 0.2s linear; */
 }
 
 #base{
@@ -480,9 +480,6 @@ a {
     width: 5px;
 }
 
-::-webkit-scrollbar:hover {
-    width: 10px;
-}
 
 /* Track */
 ::-webkit-scrollbar-track {
