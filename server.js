@@ -172,7 +172,11 @@ app.post('/delete', function(req, res) {
 
 app.post('/adduser', function(req, res) {
   //check we are logged in
-  if(!req.session.loggedin){res.redirect('/login');return;}
+  if(!req.session.loggedin){
+    res.redirect('/login');
+    console.log("not logged in");
+    return;
+  }
 
   //we create the data string from the form components that have been passed in
 
