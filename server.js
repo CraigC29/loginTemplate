@@ -61,7 +61,7 @@ app.get('/mediaSeries', function(req, res) {
 app.get('/login', function(req, res) {
   if(!req.session.loggedin){res.render('pages/login');return;}
   if(req.session.loggedin){
-    res.render('pages/profile?username=' + user.login.username);
+    res.render('pages/profile?username=' + req.query.username);
     return;
   }
 
