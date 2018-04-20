@@ -60,7 +60,10 @@ app.get('/mediaSeries', function(req, res) {
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
   if(!req.session.loggedin){res.render('pages/login');return;}
-  if(req.session.loggedin){res.render('pages/profile');return;}
+  if(req.session.loggedin){
+    res.render('pages/profile?username=' + user.login.username);
+    return;
+  }
 
   // var uname = req.query.username;
   // //this query finds the first document in the array with that username.
@@ -121,7 +124,7 @@ app.get('/logout', function(req, res) {
 //********** POST ROUTES - Deal with processing data from forms ***************************
 
 
-//the dologin route detals with the data from the login screen.
+//the dologin route detasl with the data from the login screen.
 //the post variables, username and password ceom from the form on the login page.
 app.post('/dologin', function(req, res) {
   console.log(JSON.stringify(req.body))
@@ -133,9 +136,7 @@ app.post('/dologin', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.password == pword){
-      req.session.loggedin = true; res.render('pages/flicktionary')
-    }
+    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
     //otherwise send them back to login
     else{res.redirect('/login')}
   });
