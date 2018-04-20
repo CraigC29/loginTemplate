@@ -56,7 +56,11 @@
 
 
 <button class="loginBut" type="button" name="login" id="headButton">
-    <img src="/public/images/myAccount.png" href="/profile?username=<%= user.login.username %>" alt="LOGIN" class="loginBut" onClick="login()"><a>Login</a>
+  <% if (loggedIn == false) { %>
+    <img src="/public/images/loginButtonImage.png" alt="LOGIN" class="loginBut" onClick="login()"><a>Login</a>
+  <% } else { %>
+    <img src="/public/images/myAccount.png" alt="LOGIN" class="loginBut" onClick="openAccount()" href="/profile?username=<%= user.login.username %>"><a>Login</a>
+  <% } %>
 </button>
 
   <!--Creating logo image, with class logoimage. Calling image from file -->

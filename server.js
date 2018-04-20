@@ -44,7 +44,17 @@ MongoClient.connect(url, function(err, database) {
 
 //this is our root route
 app.get('/', function(req, res) {
-  res.render('pages/flicktionary')
+  if(!req.session.loggedin){
+    var loggedIn = false;
+    res.render('pages/flicktionary', {
+      loggedIn: loggedIn,
+    });
+  } else{
+    var loggedIn = true;
+    res.render('pages/flicktionary', {
+      loggedIn: loggedIn,
+    })
+  }
 });
 
 //this is our mediaMovies route, all it does is render the mediaMovies.ejs page.
@@ -139,11 +149,28 @@ app.post('/dologin', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
+    if(result.login.password == pword){
+      req.session.loggedin = true;
+      var uname = req.query.username;
+      //this query finds the first document in the array with that username.
+      //Because the username value sits in the login section of the user data we use login.username
+      db.collection('people').findOne({
+        "login.username": uname
+      }, function(err, result) {
+        if (err) throw err;
+        //console.log(uname+ ":" + result);
+        //finally we just send the result to the user page as "user"
+        res.render('/', {
+          user: result
+        })
+      });
+    }
+
     //otherwise send them back to login
     else{res.redirect('/login')}
   });
 });
+
 
 //the delete route deals with user deletion based on entering a username
 app.post('/delete', function(req, res) {

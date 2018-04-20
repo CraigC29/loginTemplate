@@ -455,6 +455,10 @@ function login(){
   window.location.replace(urlHome);
 }
 
+function openAccount(){
+  isDelving == false;
+}
+
 function loadHomepage(){
   var typeSearch = getUrlVars()["id"];
   if (typeSearch == "Series"){
