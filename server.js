@@ -92,7 +92,7 @@ app.get('/profile', function(req, res) {
     //console.log(uname+ ":" + result);
     //finally we just send the result to the user page as "user"
     res.render('pages/profile', {
-      users: result
+      user: result
     })
   });
 
