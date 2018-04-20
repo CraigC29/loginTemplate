@@ -60,14 +60,12 @@ app.get('/mediaSeries', function(req, res) {
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
   if(!req.session.loggedin){
-    // res.render('pages/login');
-    // return;
-    console.log("not logged in");
+    res.render('pages/login');
+    return;
   }
   if(req.session.loggedin){
-    // res.render('pages/profile?username=' + req.query.username);
-    // return;
-    console.log("not logged in");
+    res.render('pages/profile?username=' + req.query.username);
+    return;
   }
 
   // var uname = req.query.username;
